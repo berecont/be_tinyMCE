@@ -1,0 +1,31 @@
+
+
+<?php $this->extend('be_tinyMCE'); ?>
+
+<?php $this->block('menubar'); ?>
+
+    paste_as_text: true,
+    visualblocks_default_state: true,
+
+<?php $this->endblock(); ?>
+
+<?php $this->block('custom'); ?>
+
+    extended_valid_elements: 'q[cite|class|title],ion-icon[name],article,section,hgroup,figure,figcaption,span[class|style],i[class]/em,i[class],s',
+    checkbox: true,
+    toolbar: 'link unlink | image | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code | undo redo',
+
+    style_formats : [
+        {
+            title: 'Mein Blockelement', // Der Titel, der im Editor angezeigt wird
+            block: 'div', // Das Tag, das verwendet werden soll (z.B. div, section)
+            classes: 'meine-klasse', // Eine benutzerdefinierte Klasse für Stilzuweisungen
+            styles: {
+                color: '#ff0000', // Farbe des Textes
+                backgroundColor: '#000000', // Hintergrundfarbe
+                // Weitere CSS-Stile können hier hinzugefügt werden
+            }
+        }
+    ],
+
+<?php $this->endblock(); ?>
